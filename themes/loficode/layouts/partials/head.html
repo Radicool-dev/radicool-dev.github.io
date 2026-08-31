@@ -1,0 +1,54 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+  {{ if .IsHome }}{{ .Site.Title }} - {{ .Site.Params.tagline }}{{ else }}{{
+  .Title }} - {{ .Site.Title }}{{ end }}
+</title>
+
+<!-- Meta Description -->
+{{ if .Description }}
+<meta name="description" content="{{ .Description }}" />
+{{ else if .IsHome }}
+<meta name="description" content="{{ .Site.Params.description }}" />
+{{ else }}
+<meta name="description" content="{{ .Summary | truncate 160 }}" />
+{{ end }}
+
+<!-- Open Graph -->
+<meta
+  property="og:title"
+  content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}"
+/>
+<meta
+  property="og:description"
+  content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}"
+/>
+<meta
+  property="og:type"
+  content="{{ if .IsPage }}article{{ else }}website{{ end }}"
+/>
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta
+  name="twitter:title"
+  content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}"
+/>
+<meta
+  name="twitter:description"
+  content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}"
+/>
+
+<!-- Styles -->
+<link rel="stylesheet" href="{{ "css/style.css" | absLangURL }}">
+
+<!-- RSS -->
+{{ range .AlternativeOutputFormats -}}
+<link
+  rel="{{ .Rel }}"
+  type="{{ .MediaType.Type }}"
+  href="{{ .Permalink | safeURL }}"
+/>
+{{ end -}}
