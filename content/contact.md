@@ -2,23 +2,26 @@
 title: "Contact"
 ---
 
-# Get in Touch
+## Get in Touch
 
-Have questions about the LofiCode theme? Want to share how you're using it? We'd love to hear from you!
+Have a question, want to discuss a project, or just want to get in touch?
+Feel free to reach out.
 
-## Theme Support
+{{< linkedin >}}
 
-For theme-related questions, bug reports, or feature requests, please 🐛 [Report Issues](https://github.com/madebydia/loficode-hugo-theme/issues).
+{{< mail >}}
 
-## Contributing
+## Contributing to My Projects
 
-Interested in contributing to LofiCode? We welcome:
+Interested in contributing to my projects? Contributions are always welcome.
 
-- Bug fixes and improvements
-- New features and enhancements
-- Documentation updates
-- Translation contributions
+You can contribute through:
 
----
+* **Bug fixes and improvements**
+* **New features and enhancements**
+* **Documentation updates**
+* **Translation contributions**
 
-*Thanks for being part of the LofiCode community! ☕💜*
+Whether it's a small fix, a new feature, or an idea, every contribution is appreciated.
+
+You can also check out and star my friend's project on [GitHub](https://github.com/ThePicPixel).

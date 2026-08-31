@@ -2,50 +2,33 @@
 title: "About me"
 ---
 
-# About LofiCode Theme
+I'm a cybersecurity engineer with five years of professional experience, with a strong interest in offensive security, systems, and programming.
 
-Ingénieur en cybersécurité riche de cinq ans d'expérience en entreprise, passionné par la sécurité offensive.
-LofiCode is a Hugo theme designed for developers, writers, and creatives who appreciate the cozy, nostalgic aesthetic of lo-fi culture combined with modern web functionality.
-
-💻 Star us on [GitHub](https://github.com/madebydia/loficode-hugo-theme)!
+I enjoy understanding how things work, breaking them apart, and building tools to solve technical problems. I'm particularly interested in penetration testing, internal networks, cloud environments, and security research.
 
 ## Skills
 
-In a world of fast-paced development and constant notifications, LofiCode offers a digital sanctuary. It's inspired by:
+**Programming**
 
-- **Lo-fi hip hop culture** - The chill, relaxed vibe that helps you focus
-- **Coffee shop atmosphere** - Warm, welcoming spaces for creativity
-- **Retro aesthetics** - Nostalgic design elements with modern usability
-- **Developer comfort** - Tools and features that make coding and writing enjoyable
+`Rust` · `Python` · `Bash` · `JavaScript` · `PHP`
 
-## Projects
+**Security**
 
-### 🎵 Ambient Sounds
-Built-in ambient sound player with carefully selected sounds to enhance your reading and writing experience.
+`Web` · `Internal Network` · `Cloud / Azure`
 
-### ☕ Coffee Theme
-Reading time indicators using coffee cups, cozy color schemes, and warm typography that feels like your favorite café.
+**Tools**
 
-### 🌙 Smart Theming
-Automatic dark/light mode detection with manual override, ensuring comfortable reading at any time of day.
+{{< tools >}}
+Nmap | https://nmap.org/
+Gobuster | https://github.com/OJ/gobuster
+Burp Suite | https://portswigger.net/burp
+NetExec | https://www.netexec.wiki/
+CrackMapExec | https://github.com/byt3bl33d3r/CrackMapExec
+Impacket | https://github.com/fortra/impacket
+Proxychains | https://github.com/haad/proxychains
+Socat | http://www.dest-unreach.org/socat/
+{{< /tools >}}
 
-### 📱 Responsive Design
-Beautiful on all devices, from mobile phones to ultrawide monitors.
+## Education
 
-### ⚡ Performance
-Optimized for speed without sacrificing features or aesthetics.
-
-## Perfect For
-
-- **Developer blogs** - Share your coding journey with style
-- **Creative portfolios** - Showcase your work in a warm, inviting environment
-- **Personal journals** - Document your thoughts and experiences
-- **Technical documentation** - Make even the driest content feel approachable
-
-## Get Started
-
-Ready to create your own cozy corner of the internet? Check out the [installation guide](https://github.com/madebydia/loficode-hugo-theme) and start building your perfect digital space.
-
----
-
-*Made with ☕ and 💜 for the Hugo community.*
+* **Engineering Degree in Cybersecurity**

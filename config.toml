@@ -1,6 +1,6 @@
-baseURL = "https://radicool-dev.github.io"
+baseURL = "https://radicool-dev.github.io/"
 locale = "en-US"
-title = "Accueil"
+title = "Home"
 theme = "loficode"
 
 # Enable emoji support
@@ -35,14 +35,15 @@ enableEmoji = true
   # Profile section
   [params.author]
     name = "Radicool"
-    image = "images/profile.png"
+    image = "images/new_profile.png"
 
-  # Social links - Supported platforms: github, twitter, linkedin, email, mastodon, youtube, instagram, facebook
+  # Social links - Supported platforms: github, twitter, linkedin, email, mastodon, youtube, instagram, facebook, rootme
   [params.social]
-    github = "https://github.com/testtest123-bot"
+    github = "https://github.com/Radicool-dev"
     # twitter = "https://twitter.com/example"
     linkedin = "https://linkedin.com/in/benjamin-thomas-212111193"
-    # email = "contact@example.com"
+    email = "ben.thomas.pro@gmail.com"
+    rootme = "https://www.root-me.org/radicool?inc=info&lang=fr"
     # mastodon = "https://mastodon.social/@example"
     # youtube = "https://youtube.com/@example"
     # instagram = "https://instagram.com/example"

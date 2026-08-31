@@ -1,0 +1,16 @@
+{{/* Rangée de puces d'outils cliquables.
+     Contenu interne : une ligne par outil, format "Nom | URL | icone(optionnel)".
+     L'icone est un emoji ou du texte court affiche devant le nom. */}}
+<div class="tool-chips">
+  {{ range (split (trim .Inner "\n") "\n") }}
+  {{ $parts := split . "|" }}
+  {{ if ge (len $parts) 2 }}
+  {{ $name := trim (index $parts 0) " " }}
+  {{ $url := trim (index $parts 1) " " }}
+  <a href="{{ $url }}" class="tool-chip" target="_blank" rel="noopener noreferrer">
+    {{ if ge (len $parts) 3 }}<span class="tool-chip-icon">{{ trim (index $parts 2) " " }}</span>{{ end }}
+    <span class="tool-chip-name">{{ $name }}</span>
+  </a>
+  {{ end }}
+  {{ end }}
+</div>

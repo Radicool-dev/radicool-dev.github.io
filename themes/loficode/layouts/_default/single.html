@@ -2,7 +2,7 @@
 <!-- Full-screen post layout to match SPA overlay -->
 <div class="post-overlay active">
     <div class="post-overlay-backdrop"></div>
-    <div class="post-overlay-content" style="position: relative; min-height: 100vh; padding: 0; transform: translateY(0);">
+    <div class="post-overlay-content" style="position: relative; min-height: 100vh; padding: 0 0 160px; transform: translateY(0);">
         <div class="post-overlay-header">
             <div class="post-overlay-title">
                 <a href="/" class="overlay-site-title">{{ .Site.Title }}</a>
@@ -25,7 +25,7 @@
                                 {{ $cupsToShow = $maxCups }}
                             {{ end }}
                             {{ range (seq $cupsToShow) }}
-                                {{ $coffees = print $coffees "☕" }}
+                                {{ $coffees = print $coffees "💻" }}
                             {{ end }}
                             {{ $coffees }}
                         </span>
@@ -63,7 +63,7 @@
                             {{ $maxCups := 5 }}
                             {{ $cupsToShow := .ReadingTime }}
                             {{ if gt .ReadingTime $maxCups }}{{ $cupsToShow = $maxCups }}{{ end }}
-                            {{ range (seq $cupsToShow) }}{{ $coffees = print $coffees "☕" }}{{ end }}
+                            {{ range (seq $cupsToShow) }}{{ $coffees = print $coffees "💻" }}{{ end }}
                             {{ $coffees }} {{ .ReadingTime }} min read
                         </div>
                     </div>

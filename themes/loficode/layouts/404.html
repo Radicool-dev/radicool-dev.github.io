@@ -602,11 +602,6 @@
     </style>
 </head>
 <body>
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
-        🌙
-    </button>
-
     <!-- Matrix Rain Background -->
     <div class="matrix-rain" id="matrixRain"></div>
 
@@ -671,32 +666,8 @@
     </div>
 
     <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('themeToggle');
-        const htmlElement = document.documentElement;
-
-        function getInitialTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) return savedTheme;
-            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
-
-        function updateThemeIcon() {
-            const isDark = htmlElement.getAttribute('data-theme') === 'dark';
-            themeToggle.textContent = isDark ? '☀️' : '🌙';
-        }
-
-        const currentTheme = getInitialTheme();
-        htmlElement.setAttribute('data-theme', currentTheme);
-        updateThemeIcon();
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon();
-        });
+        // Dark mode only
+        document.documentElement.setAttribute('data-theme', 'dark');
 
         // Matrix rain effect
         function createMatrixRain() {

@@ -12,7 +12,11 @@
 
         <div class="header-controls">
             <button class="search-toggle" title="Search posts" aria-label="Search posts">🔍</button>
-            <button class="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+            <button class="menu-toggle" id="menuToggle" title="Menu" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <span class="menu-toggle-bar"></span>
+                <span class="menu-toggle-bar"></span>
+                <span class="menu-toggle-bar"></span>
+            </button>
         </div>
     </nav>
 
@@ -30,5 +34,12 @@
             </div>
             <div class="search-results" id="searchResults"></div>
         </div>
+    </div>
+
+    <!-- Menu mobile deroulant -->
+    <div class="mobile-menu" id="mobileMenu">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL | absLangURL }}" class="mobile-menu-link">{{ .Name }}</a>
+        {{ end }}
     </div>
 </header>
