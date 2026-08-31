@@ -1,4 +1,4 @@
-baseURL = "https://example.com"
+baseURL = "https://radicool-dev.github.io"
 locale = "en-US"
 title = "Accueil"
 theme = "loficode"
