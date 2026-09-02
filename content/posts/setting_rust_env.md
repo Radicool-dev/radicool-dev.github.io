@@ -25,7 +25,7 @@ You now have three commands:
 - **`rustc`** is the compiler. You will almost never call it directly.
 - **`cargo`** is the build tool and package manager. This is the one you use all day.
 
-Add the linter and the formatter while you are at it:
+Add the linter and the formatter:
 
 ```bash
 rustup component add clippy rustfmt
@@ -33,13 +33,13 @@ rustup component add clippy rustfmt
 
 ## 2. Set up VS Code
 
-Three extensions. That is genuinely all you need:
+Three extensions is all you need:
 
 | Extension | ID | What it does |
 |---|---|---|
-| **rust-analyzer** | `rust-lang.rust-analyzer` | Autocompletion, go-to-definition, inline types, errors as you type |
+| **rust-analyzer** | `rust-lang.rust-analyzer` | code-completion, go-to-definition, refactoring, errors as you type |
 | **Even Better TOML** | `tamasfe.even-better-toml` | Makes editing `Cargo.toml` pleasant |
-| **CodeLLDB** | `vadimcn.vscode-lldb` | Debugger with breakpoints, for when `println!` is not enough |
+| **CodeLLDB** | `vadimcn.vscode-lldb` | Debugger |
 
 ## 3. The cargo commands you actually need
 
@@ -58,11 +58,11 @@ cd my-tool
 | `cargo fmt` | Formats every file in the project |
 | `cargo add serde` | Adds a dependency to `Cargo.toml` |
 
-The distinction that matters most when you are starting: **`cargo check` is much faster than `cargo build`**, because it does all the type checking but skips generating the actual machine code. When you are writing code and just want to know whether the compiler is happy, use `check`. Build only when you actually want to run something.
+**`cargo check` is much faster than `cargo build`**, because it does all the type checking but skips generating the actual machine code. When you are writing code and just want to know whether the compiler will work, use `check`. Build only when you actually want to run something.
 
-You will also see `cargo clean` mentioned around the internet. It deletes the whole `target/` folder, meaning your next build recompiles every dependency from scratch.
+You can also use `cargo clean`. It deletes the whole `target/` folder, meaning your next build recompiles every dependency from scratch.
 
-## 4. Organizing your code
+## 4. Creating a new project
 
 A new project gives you a single `src/main.rs`.
 
@@ -75,7 +75,7 @@ my-tool/
 
 ## 5. Handling errors properly
 
-The first thing every Rust tutorial teaches you is `.unwrap()`, and the first thing you should learn after that is to stop using it. `unwrap()` crashes your program on failure with an unhelpful message. It is fine while experimenting, not in something you intend to keep.
+When you start coding in Rust you will use `.unwrap()`, and the first thing you should learn after that is to stop using it. `unwrap()` crashes your program on failure with an unhelpful message. It is fine while experimenting, not in something you intend to keep.
 
 Instead, define your errors in one place and call it `error.rs`.
 
@@ -85,7 +85,7 @@ src/
 └── error.rs
 ```
 
-In Rust, a common way to handle application errors is to use an enum to represent the different kinds of errors that can occur.
+In Rust, you can handle application errors by using an enum to represent the different kinds of errors that can occur.
 
 For example, we can define an AppError:
 
@@ -119,7 +119,7 @@ impl std::fmt::Display for AppError {
     }
 }
 ```
-You can then return these errors from your functions using Result<T, AppError> and handle them. You can do it with a simple println! for example:
+Then return these errors from your functions using Result<T, AppError> and handle them. You can do it with a simple println! for example:
 
 ``` rust
 println!("Error: {error}");
