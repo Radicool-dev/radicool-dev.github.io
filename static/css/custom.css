@@ -1,0 +1,59 @@
+/* Table styling for the LofiCode theme.
+   Colors derive from currentColor via color-mix(), so this follows
+   the theme palette in both light and dark mode. */
+
+article table,
+.post-content table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+article th,
+article td,
+.post-content th,
+.post-content td {
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+}
+
+article thead th,
+.post-content thead th {
+  font-weight: 600;
+  white-space: nowrap;
+  border-bottom: 2px solid color-mix(in srgb, currentColor 35%, transparent);
+}
+
+article tbody tr:nth-child(even),
+.post-content tbody tr:nth-child(even) {
+  background: color-mix(in srgb, currentColor 4%, transparent);
+}
+
+article td code,
+article th code,
+.post-content td code,
+.post-content th code {
+  font-size: 0.88em;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  article table,
+  .post-content table {
+    font-size: 0.85rem;
+  }
+
+  article th,
+  article td,
+  .post-content th,
+  .post-content td {
+    padding: 0.5rem 0.6rem;
+  }
+}
