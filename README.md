@@ -24,4 +24,4 @@ The site is served at http://localhost:1313 with live reload. The `-D` flag incl
 
 ## Deployment
 
-Pushing to `main` triggers the workflow in `.github/workflows/`, which builds the site with Hugo and publishes it to GitHub Pages. The generated `public/` directory is not committed.
+Pushing to `main` triggers the workflow in `.github/workflows/`, which builds the site with Hugo and publishes it to GitHub Pages.

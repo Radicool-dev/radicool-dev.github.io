@@ -1,17 +1,31 @@
 ---
-title: "Setting Up a Rust Development Environment"
-subtitle: "What you need to start writing Rust, and nothing more"
+title: "Understanding NTLM"
+subtitle: "NTLM, What is it?"
 date: 2026-09-02
 tags: ["rust", "cargo", "vscode", "beginners"]
 featured: true
 mood: "focused"
 ---
 
-Here is the minimum setup that gives you a comfortable environment, plus the few conventions that keep a project readable once it grows past one file.
+NTLM is a suite of Microsoft security protocols used to verify user and computer identities on a network. It is a challenge-response authentication protocol.
 
-## 1. Install the toolchain
+## 1. How it works
 
-Use `rustup`, the official installer.
+1) A client request an authentication to a server.
+2) The server answer by sending an NTLM challenge.
+3) The client send an answer to the NTLM challenge.
+4) The sever verifies and accept the request.
+
+To be more precise between step 2 and 3
+The challenge sent by the server contains a random number of one byte. This challenge can't be predicted by the client.
+Then the client prepare the response with the random number given by the server.
+The first step "MD4(UNICODE(Password))":
+- Take the password of the user and encode it into UTF-16LE
+- Transform the encoded password into NTHASH thank's to MD4
+The second step HMAC-MD5(NT_Hash, UNICODE(UPPERCASE(User) + Domain)):
+- Encode in UTF-16LE the user name in uppercase with the domain name "UNICODE(UPPERCASE(User) + Domain)"
+- Use a HMAC-MD5 operation on the NTHASH generated in the first step, with the encoded string of the second step
+
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
